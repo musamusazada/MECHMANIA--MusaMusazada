@@ -1,0 +1,106 @@
+#fav-main {
+  margin-top: 100px;
+  margin-bottom: 300px;
+  padding: 30px;
+  .container {
+    .fav-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      .fav-header {
+        h1 {
+          @extend %nunito400;
+          font-size: 2.5rem;
+          text-align: center;
+          color: #ffddd2;
+          text-shadow: -2px 3px 0 #f77f00, 2px 2px 0 #f4f1de;
+          transition: 0.4s;
+          cursor: pointer;
+          &:hover {
+            color: #ffb703;
+            text-shadow: 2px 2px 0 #b7b7a4;
+          }
+        }
+      }
+      .card-favorite {
+        display: flex;
+        gap: 20px;
+        box-shadow: 0 0 15px 3px #f4f1de;
+        border-radius: 10px;
+        padding: 20px;
+        cursor: pointer;
+        transition: 0.5s;
+        &:hover {
+          box-shadow: 0 0 15px 8px #f4f1de;
+        }
+        &:hover .img-box-profile img {
+          transform: scale(1.1);
+        }
+        .img-box-profile {
+          flex-basis: 40%;
+          border-radius: 10px;
+          object-fit: cover;
+          overflow: hidden;
+          img {
+            transition: 0.5s;
+            max-width: 100%;
+            display: block;
+          }
+        }
+        .fav-text-box {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+          h1 {
+            color: #3d405b;
+            @extend %nunito400;
+            font-size: 1.3rem;
+            width: 100%;
+          }
+          P {
+            color: #1d3557;
+            @extend %nunito400;
+            font-size: 1.3rem;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+@mixin fav-main-s() {
+  .container {
+    .row {
+      .card-favorite {
+        flex-direction: column;
+        .fav-text-box {
+          h1 {
+            font-size: 1rem;
+          }
+          p {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+@mixin fav-main-md() {
+  .container {
+    .row {
+      .card-favorite {
+        flex-direction: row;
+      }
+      .fav-text-box {
+        h1 {
+          font-size: 1.3rem;
+        }
+        p {
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,77 @@
+//Montserrat Family
+%montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+%montserrat200 {
+  @extend %montserrat;
+  font-weight: 200;
+}
+%montserrat300 {
+  @extend %montserrat;
+  font-weight: 300;
+}
+%montserrat300i {
+  @extend %montserrat;
+  font-weight: 300;
+  font-style: italic;
+}
+%montserrat500 {
+  @extend %montserrat;
+  font-weight: 500;
+}
+%montserrat500i {
+  @extend %montserrat;
+  font-weight: 500;
+  font-style: italic;
+}
+//Nunito Family
+
+%nunito {
+  font-family: "Nunito", sans-serif;
+}
+%nunito200 {
+  @extend %nunito;
+  font-weight: 200;
+}
+%nunito300 {
+  @extend %nunito;
+  font-weight: 300;
+}
+%nunito300i {
+  @extend %nunito;
+  font-weight: 300;
+  font-style: italic;
+}
+%nunito400 {
+  @extend %nunito;
+  font-weight: 400;
+}
+//Roboto Mono Family
+%roboto_mono {
+  font-family: "Roboto Mono", monospace;
+}
+%roboto_mono200 {
+  @extend %roboto_mono;
+  font-weight: 200;
+}
+%roboto_mono400 {
+  @extend %roboto_mono;
+  font-weight: 400;
+}
+//Ubunut Family
+%ubuntu {
+  font-family: "Ubuntu", sans-serif;
+}
+%ubuntu300 {
+  @extend %ubuntu;
+  font-weight: 300;
+}
+%ubuntu300i {
+  @extend %ubuntu;
+  font-weight: 300;
+  font-style: italic;
+}
+%ubuntu400 {
+  @extend %ubuntu;
+  font-weight: 400;
+}

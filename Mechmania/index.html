@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechmania</title>
+    <link rel="stylesheet" href="./assets/grid-bootstrap/bootstrap-grid.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,500;1,300;1,500&family=Nunito:ital,wght@0,200;0,300;0,400;1,300&family=Roboto+Mono:wght@200;400&family=Ubuntu:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet"> 
+    <script src="https://kit.fontawesome.com/407b7a1280.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="./assets/css/main.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <a href="./index.html" class="img-box">
+                    <img src="./assets/images/cropped_Mechmania.png" alt="">
+                </a>
+                <nav>
+                    <a href="index.html" class="active">
+                        <span>Home</span>
+                    </a>                   
+                    <a href="./registration.html" id="mechanic--login">
+                        <span>For Mechanics</span>
+                    </a>
+                </nav>
+                <div class="fav--display"><i class="fas fa-tools"><span id="count"></span></i><div class="favSlider"></div></div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section id="infoBoard">
+            <div class="container">
+                <div class="row">
+                    <div class="col-s-12 col-md-6 info-text-box">
+                        <h1>Find, Learn, Fix</h1>
+                        <h5>Mechmania brings it all together</h5>
+                        <h5>So you can get your car fixed A.S.A.P.</h5>
+                    </div>
+                    <div class="col-s-12 col-md-3 info-img-box">
+                        <img src="./assets/images/mechanic-home.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="quickTips">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 tips-title-box">
+                        <h1>Quick Tips</h1>
+                        <h3>Learn about your car</h3>
+                    </div>
+                    <div class="col-12 tips-controller">
+                        <div class="button-box">
+                            <button class="button-item" id="diagnose"><i class="fas fa-stethoscope"></i></button>
+                            <button class="button-item" id="engine"><i class="fab fa-searchengin"></i></button>
+                            <button class="button-item" id="oil"><i class="fas fa-oil-can"></i></button>
+                            <button class="button-item" id="tire"><i class="fas fa-truck-monster"></i></button>
+                            <button class="button-item" id="gear"><i class="fas fa-cogs"></i></button>
+                            <button class="button-item" id="battery"><i class="fas fa-car-battery"></i></button>
+                        </div>
+                    </div>
+                    <div class="col-12 img-box">
+                        <div class="img-wrapper"><img src="./assets/images/irangirover.png" alt="Car Image"></div>
+                        <div class="tip-text"></div>
+                        <i class="fas fa-info-circle"></i>
+                        <span class="caricon" id="diagnose-img"><i class="fas fa-stethoscope"></i></span>
+                        <span class="caricon" id="engine-img"><i class="fab fa-searchengin"></i></span>
+                        <span class="caricon" id="oil-img"><i class="fas fa-oil-can"></i></span>
+                        <span class="caricon" id="tire-img"><i class="fas fa-truck-monster"></i></span>
+                        <span class="caricon" id="gear-img"> <i class="fas fa-cogs"></i></span>
+                        <span class="caricon" id="battery-img"><i class="fas fa-car-battery"></i></span>
+                    </div>
+                </div>
+            </div>
+          
+        </section>
+        <section id="mechanics">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 title-text">
+                        <h1 class="text-center">Browse Among Mechanics</h1>
+                    </div>
+                    <div class="col-12 card-container owl-carousel owl-theme"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-s-12 col-md-6 site-info">
+                    <h1>Mechmania!</h1>
+                    <h2>Great platform for "engine heads"</h2>
+                </div>
+                <div class="col-s-12 col-md-4 contact-info">
+                    <h1>Contact us: mechmania@v6.com</h1>
+                    <h1>Office: Imaginature 24/8</h1>
+                    <h1></h1>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="./js/owlCarousel.js"></script>
+    <script type="module" src="./js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,631 @@
+body {
+  .remove {
+    display: none;
+  }
+  position: relative;
+  .error-modal {
+    z-index: 1000000011;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    .modal-text-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 10px;
+      background: #fff;
+      box-shadow: 0 0 15px 1px rgba(177, 171, 171, 0.377);
+      border-radius: 10px;
+      padding: 30px 15px;
+      cursor: pointer;
+      h1 {
+        @extend %roboto_mono400;
+        font-size: 1.5rem;
+      }
+      .modal-button {
+        @extend %button-default;
+        &:hover {
+          background: #e63946;
+          color: #f1faee;
+        }
+      }
+    }
+  }
+}
+main {
+  #infoBoard {
+    min-height: 40vh;
+    padding: 30px;
+    background: $primary-yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .container {
+      .row {
+        justify-content: space-around;
+        align-items: center;
+        .info-text-box {
+          h1 {
+            color: #fdfcdc;
+            @extend %montserrat500i;
+            font-size: 3rem;
+            margin-bottom: 10px;
+          }
+          h5 {
+            color: #ae2012;
+            @extend %nunito400;
+            font-size: 2rem;
+          }
+        }
+        .info-img-box {
+          object-fit: cover;
+          img {
+            max-width: 100%;
+            display: block;
+          }
+        }
+      }
+    }
+  }
+  #quickTips {
+    margin: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .container {
+      .row {
+        .tips-title-box {
+          margin-bottom: 40px;
+          text-align: center;
+          position: relative;
+          h1 {
+            @extend %ubuntu400;
+            font-size: 2rem;
+            margin-bottom: 20px;
+          }
+          h3 {
+            @extend %roboto_mono400;
+            font-size: 1.6rem;
+          }
+          &::after {
+            position: absolute;
+            content: "";
+            display: inline-block;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: $primary-yellow;
+          }
+        }
+
+        .tips-controller {
+          display: flex;
+          padding: 0;
+
+          .button-box {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+          }
+
+          button {
+            @extend %button-car;
+            background: #f0efeb;
+            font-size: 2rem;
+            transition: 0.5s;
+            @extend %hoverEffect;
+            &::after {
+              background: #fee440;
+              transform-origin: center;
+              height: 5px;
+            }
+            &:hover {
+              color: #fee440;
+              background: #cac8c4bb;
+            }
+          }
+        }
+        .img-box {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          background-color: gray;
+          padding: 50px 0;
+          .fa-info-circle {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            color: #fff;
+            font-size: 1.5rem;
+          }
+          .tip-text {
+            display: none;
+            @extend %montserrat500;
+            font-size: 1rem;
+            position: absolute;
+            z-index: 0;
+            left: 10px;
+            top: 10px;
+            width: 350px;
+            min-height: 120px;
+            color: #fff;
+            background: rgba(29, 29, 29, 0.425);
+            border-radius: 5px;
+            padding: 25px 0 0 35px;
+          }
+          .img-wrapper {
+            display: flex;
+            justify-content: center;
+            object-fit: cover;
+            img {
+              max-width: 100%;
+              height: 100%;
+              display: block;
+            }
+          }
+          .selected {
+            background: #ffd60a;
+            color: #fff;
+          }
+          span {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            background: #e9ecef;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          #diagnose-img {
+            @extend %absolutePOS;
+            top: 180px;
+            left: 34%;
+          }
+          #engine-img {
+            @extend %absolutePOS;
+            top: 170px;
+            left: 18%;
+          }
+          #oil-img {
+            @extend %absolutePOS;
+            top: 140px;
+            left: 24%;
+          }
+          #tire-img {
+            @extend %absolutePOS;
+            top: 140px;
+            right: 24%;
+          }
+          #gear-img {
+            @extend %absolutePOS;
+
+            bottom: 110px;
+            left: 40%;
+          }
+          #battery-img {
+            @extend %absolutePOS;
+
+            top: 130px;
+            left: 30%;
+          }
+        }
+      }
+    }
+  }
+  #mechanics {
+    .container {
+      .row {
+        .title-text {
+          margin: 20px 0;
+          h1 {
+            @extend %ubuntu300i;
+            font-size: 2rem;
+          }
+        }
+        .card-container {
+          background: transparent;
+          margin-bottom: 100px;
+          display: flex;
+          justify-content: center;
+          @extend %ubuntu300i;
+          font-size: 1.5rem;
+          .card-mechanic {
+            margin-left: 10px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            padding: 60px 10px;
+            cursor: pointer;
+            box-shadow: 0 0 10px 1px rgba(209, 208, 208, 0.507);
+            transition: 0.4s;
+            &:hover {
+              background: #fffdf0;
+            }
+            .heart {
+              display: inline-block;
+              position: absolute;
+              top: 10px;
+              right: 10px;
+              height: 10px;
+              transition: 0.2s;
+              &:hover {
+                color: #e63946;
+              }
+            }
+            .fas {
+              color: #e63946;
+            }
+            // .clicked {
+            //   color: #e63946;
+            // }
+            .img-box-profile {
+              object-fit: cover;
+              overflow: hidden;
+              border-radius: 50%;
+              width: 150px;
+              height: 150px;
+              img {
+                width: 100%;
+                height: 100%;
+                display: block;
+              }
+            }
+            h1 {
+              display: flex;
+              @extend %montserrat300;
+              font-style: normal;
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+//Breakpoints infoboard
+@mixin infoboard--s() {
+  main {
+    #infoBoard {
+      .container {
+        .row {
+          flex-direction: column;
+          .info-text-box {
+            h1 {
+              text-align: center;
+              font-size: 2rem;
+            }
+            h5 {
+              text-align: center;
+              font-size: 1.5rem;
+            }
+          }
+          .info-img-box {
+            display: flex;
+            justify-content: center;
+            img {
+              max-width: 50%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@mixin infoboard--md() {
+  main {
+    #infoBoard {
+      .container {
+        .row {
+          flex-direction: row;
+          .info-text-box {
+            h1 {
+              text-align: center;
+              font-size: 3rem;
+            }
+            h5 {
+              text-align: center;
+              font-size: 2rem;
+            }
+          }
+          .info-img-box {
+            text-align: center;
+            img {
+              max-width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+//Breakpoints quickTips
+@mixin quicktips--s() {
+  main {
+    #quickTips {
+      .container {
+        .row {
+          .tips-title-box {
+            h1 {
+            }
+            h3 {
+            }
+          }
+          .tips-controller {
+            .button-box {
+            }
+            button {
+              height: 60px;
+              flex-basis: 20%;
+              font-size: 1.4rem;
+            }
+          }
+          .img-box {
+            .tip-text {
+              width: 400px;
+              min-height: 100px;
+              font-size: 0.9rem;
+            }
+            span {
+              width: 35px;
+              height: 35px;
+            }
+            #diagnose-img {
+              top: 180px;
+              left: 26%;
+            }
+            #engine-img {
+              top: 150px;
+              left: 5%;
+            }
+            #oil-img {
+              top: 120px;
+              left: 15%;
+            }
+            #tire-img {
+              bottom: 150px;
+              right: 20%;
+            }
+            #gear-img {
+              bottom: 90px;
+              left: 40%;
+            }
+            #battery-img {
+              top: 120px;
+              left: 25%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+//Special Breakpoint
+@mixin quicktups--mobile-special() {
+  main {
+    #quickTips {
+      .container {
+        .row {
+          .tips-controller {
+            .button-box {
+            }
+            button {
+              height: 60px;
+              flex-basis: 20%;
+              font-size: 1.4rem;
+            }
+          }
+          .img-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 200px;
+            padding: 10px;
+            .tip-text {
+              position: unset;
+              padding-bottom: 20px;
+              padding-right: 10px;
+              min-height: 100px;
+              font-size: 1.1rem;
+            }
+            .img-wrapper {
+              display: none;
+            }
+            span {
+              display: none;
+              width: 35px;
+              height: 35px;
+            }
+            #diagnose-img {
+              top: 180px;
+              left: 26%;
+            }
+            #engine-img {
+              top: 150px;
+              left: 5%;
+            }
+            #oil-img {
+              top: 120px;
+              left: 15%;
+            }
+            #tire-img {
+              bottom: 150px;
+              right: 20%;
+            }
+            #gear-img {
+              bottom: 90px;
+              left: 40%;
+            }
+            #battery-img {
+              top: 120px;
+              left: 25%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@mixin quicktips--md() {
+  main {
+    #quickTips {
+      .container {
+        .row {
+          .tips-title-box {
+            h1 {
+            }
+            h3 {
+            }
+          }
+          .tips-controller {
+            .button-box {
+            }
+            button {
+              height: 150px;
+              font-size: 2rem;
+            }
+          }
+
+          .img-box {
+            .tip-text {
+              position: absolute;
+              padding-bottom: 20px;
+              padding-right: 10px;
+              min-height: 100px;
+              font-size: 1.1rem;
+            }
+
+            span {
+              width: 50px;
+              height: 50px;
+            }
+            #diagnose-img {
+              position: absolute;
+
+              top: 180px;
+              left: 34%;
+            }
+            #engine-img {
+              position: absolute;
+
+              top: 170px;
+              left: 18%;
+            }
+            #oil-img {
+              position: absolute;
+
+              top: 140px;
+              left: 24%;
+            }
+            #tire-img {
+              position: absolute;
+
+              top: 200px;
+              right: 30%;
+            }
+            #gear-img {
+              position: absolute;
+
+              bottom: 110px;
+              left: 40%;
+            }
+            #battery-img {
+              position: absolute;
+
+              top: 140px;
+              left: 30%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@mixin quicktups--tablet-special() {
+  main {
+    #quickTips {
+      .container {
+        .row {
+          .tips-title-box {
+            h1 {
+            }
+            h3 {
+            }
+          }
+          .tips-controller {
+            .button-box {
+            }
+            button {
+              height: 150px;
+              font-size: 2rem;
+            }
+          }
+
+          .img-box {
+            .tip-text {
+              position: absolute;
+              padding-bottom: 20px;
+              padding-right: 10px;
+              min-height: 100px;
+              font-size: 1.1rem;
+            }
+
+            span {
+              width: 40px;
+              height: 40px;
+            }
+            #diagnose-img {
+              position: absolute;
+
+              top: 200px;
+              left: 25%;
+            }
+            #engine-img {
+              position: absolute;
+
+              top: 170px;
+              left: 4%;
+            }
+            #oil-img {
+              position: absolute;
+
+              top: 140px;
+              left: 14%;
+            }
+            #tire-img {
+              position: absolute;
+
+              top: 200px;
+              right: 25%;
+            }
+            #gear-img {
+              position: absolute;
+
+              bottom: 110px;
+              left: 40%;
+            }
+            #battery-img {
+              position: absolute;
+
+              top: 140px;
+              left: 25%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@mixin quicktips--lg() {
+}
