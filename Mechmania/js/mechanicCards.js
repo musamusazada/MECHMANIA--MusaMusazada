@@ -18,7 +18,7 @@ function cardCreator(obj,cardBox){
     const card = document.createElement("div");
     card.classList.add("item");
     card.classList.add("card-mechanic");
-    card.setAttribute("id",`${obj._company}`);
+    card.setAttribute("id",`${obj._company.trim()}`);
 
     //Card Fields
     //Random Profile Img

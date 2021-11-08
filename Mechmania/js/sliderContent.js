@@ -8,7 +8,7 @@ export default function sliderContent(favedCards,storage){
     let  allFavObj=[];
     if(Cards.length>0){
         StorageArr.forEach(el=>{
-            if(Cards.includes(el._company)){
+            if(Cards.includes(el._company.trim())){
                 allFavObj.push(el);
                 localStorage.setItem('allFavObjects',JSON.stringify(allFavObj))
                 const card = document.createElement("div");
