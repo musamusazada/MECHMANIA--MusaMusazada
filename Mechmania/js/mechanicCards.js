@@ -18,7 +18,7 @@ function cardCreator(obj,cardBox){
     const card = document.createElement("div");
     card.classList.add("item");
     card.classList.add("card-mechanic");
-    card.setAttribute("id",`${obj._company.trim()}`);
+    card.setAttribute("id",`${obj._userID}`);
 
     //Card Fields
     //Random Profile Img
@@ -38,6 +38,7 @@ function cardCreator(obj,cardBox){
     contactNum.textContent=`Contact Number: ${obj._contact}`;
     //Card Heart
     const heart = document.createElement("i");
+    heart.setAttribute("id",`${+obj._userID+1}`)
     heart.classList.add("far");
     heart.classList.add("fa-heart");
     heart.classList.add("heart");

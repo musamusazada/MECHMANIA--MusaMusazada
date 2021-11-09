@@ -1,7 +1,21 @@
 import Mechanic from './mechanicClass.js'
 import { MechanicArr } from './mechanicClass.js';
 import {markerArr} from './googlemap.js';
-export function onSignUp(){
+
+let idCounter = getIDStorage();
+
+function getIDStorage(){
+    const id = localStorage.getItem("id")
+    if(id){
+        return +id;
+    }
+    else{
+        return 0;
+    }
+}
+
+export function onSignUp(idCounter){
+
     const fullname= document.querySelector("#fullname");
     const companyname = document.querySelector("#companyname");
     const contactnumber=document.querySelector("#contactnumber");
@@ -43,7 +57,9 @@ function checkRegistration(){
     if(!bool){
         createModal("Oops! Please Fill All Fields :)");
     }else{
-        createMechanic(fullname.value, companyname.value, contactnumber.value,profession.value,markerArr);
+        idCounter+=2;
+        localStorage.setItem("id",idCounter);
+        createMechanic(fullname.value, companyname.value, contactnumber.value,profession.value,markerArr,idCounter);
         window.location.reload();
     }
 }
@@ -68,8 +84,8 @@ function numberCheckRegEx(obj,error){
 }
 
 //Creating Mechanic on request. Adding it to the Local Storage.
-function createMechanic(fullname,companyName,contactnumber,profession,location){
-    const mechanic = new Mechanic(fullname,companyName,contactnumber,profession,location);
+function createMechanic(fullname,companyName,contactnumber,profession,location,id){
+    const mechanic = new Mechanic(fullname,companyName,contactnumber,profession,location,id);
     MechanicArr.push(mechanic);
     localStorage.setItem("mechanics", JSON.stringify(MechanicArr));
 }

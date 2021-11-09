@@ -26,6 +26,7 @@ $(document).ready(function(){
 window.onload =()=>{
     favedCards = getFavStorage();
     localStorageArr=getStorage();
+    console.log(localStorageArr[0])
     cardContainer = document.querySelector(".owl-carousel");
     countFav= document.querySelector("#count");
     countFav.textContent=favedCards.length;   
@@ -48,7 +49,7 @@ window.onload =()=>{
 
 function favedCardsOnLoad(favedCards){
     favedCards.forEach(el=>{   
-        document.querySelector(`#${el} .heart`).classList.add("fas");
+        document.getElementById(`${+el+1}`).classList.add("fas");
     })
 }
 
