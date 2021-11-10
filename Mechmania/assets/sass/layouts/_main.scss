@@ -130,7 +130,7 @@ main {
             }
             &:hover {
               color: #fee440;
-              background: #cac8c4bb;
+              background: #a0bed3bb;
             }
           }
         }
@@ -167,7 +167,7 @@ main {
             justify-content: center;
             object-fit: cover;
             img {
-              max-width: 100%;
+             width: 100%;
               height: 100%;
               display: block;
             }
@@ -293,6 +293,88 @@ main {
       }
     }
   }
+  #infoTech{
+    margin: 100px 0;
+    .container{
+      .row{
+        justify-content: center;
+        .infoTech-title{
+          font-size: 3rem;
+          text-align: center;
+          @extend %roboto_mono400;
+          margin-bottom: 50px;
+        }
+        .card{
+          transition: 0.4s;
+          cursor: pointer;
+          border-radius: 10px;
+          
+          &:hover{
+            background: #9bebff;
+            color: #f1faee;
+          }
+          &:hover h1{
+            color: #3f37c9;
+          }
+
+          .card-wrapper{
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap:15px;
+          
+            .card--img{
+              display: flex;
+              justify-content: center;
+              object-fit: cover;
+             
+              img{
+                width: 100%;
+              }
+            }
+              .card--text{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap:15px;
+                h1{
+                @extend %ubuntu400;
+                  font-size: 1.8rem;
+                }
+                p{
+
+                flex-basis: 50%;
+                  @extend %montserrat300i;
+                  font-size: 1.5rem;
+                  text-align: center;
+                }
+              }
+            
+          }
+        }
+      }
+    }
+  }
+  #canvas-section{
+    margin:100px 0;
+    .container{
+      .row{
+        .canvas-container{
+          #canvas{
+            width: 100%;
+            
+            background: rgb(48,40,182);
+background: linear-gradient(90deg, rgba(48,40,182,1) 0%, rgba(0,236,255,1) 100%);
+            border-radius: 10px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
 }
 //Breakpoints infoboard
 @mixin infoboard--s() {
@@ -356,19 +438,11 @@ main {
     #quickTips {
       .container {
         .row {
-          .tips-title-box {
-            h1 {
-            }
-            h3 {
-            }
-          }
+         
           .tips-controller {
             .button-box {
             }
             button {
-              height: 60px;
-              flex-basis: 20%;
-              font-size: 1.4rem;
             }
           }
           .img-box {
@@ -415,6 +489,7 @@ main {
 @mixin quicktups--mobile-special() {
   main {
     #quickTips {
+      margin-bottom: 200px;
       .container {
         .row {
           .tips-controller {
@@ -432,43 +507,58 @@ main {
             align-items: center;
             min-height: 200px;
             padding: 10px;
+            .fa-info-circle{
+              bottom: 0;
+              left: 5px;
+              transform: translateY(102%);
+            }
             .tip-text {
-              position: unset;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              position: absolute;
+              bottom:0;
+              left:0;
+              right:0;
+              width:100%; 
+              transform: translateY(100%);
               padding-bottom: 20px;
               padding-right: 10px;
               min-height: 100px;
               font-size: 1.1rem;
+            border-radius: 0;
+           
+
             }
             .img-wrapper {
-              display: none;
             }
             span {
-              display: none;
-              width: 35px;
-              height: 35px;
+              width: 30px;
+              height: 30px;
+              font-size: 0.8rem;
             }
             #diagnose-img {
-              top: 180px;
+              top: 100px;
               left: 26%;
             }
             #engine-img {
-              top: 150px;
+              top: 80px;
               left: 5%;
             }
             #oil-img {
-              top: 120px;
+              top: 70px;
               left: 15%;
             }
             #tire-img {
-              bottom: 150px;
+              top: 100px;
               right: 20%;
             }
             #gear-img {
-              bottom: 90px;
+              bottom: 40px;
               left: 40%;
             }
             #battery-img {
-              top: 120px;
+              top: 60px;
               left: 25%;
             }
           }
@@ -552,7 +642,7 @@ main {
     }
   }
 }
-@mixin quicktups--tablet-special() {
+@mixin quicktips--tablet-special() {
   main {
     #quickTips {
       .container {
@@ -627,5 +717,183 @@ main {
     }
   }
 }
-@mixin quicktips--lg() {
+@mixin quicktips--lg(){
+  main {
+    #quickTips {
+      .container {
+        .row {
+          .tips-title-box {
+            h1 {
+            }
+            h3 {
+            }
+          }
+          .tips-controller {
+            .button-box {
+              width:100%
+            }
+            button {
+              height: 120px;
+              font-size: 2rem;
+            }
+          }
+
+          .img-box {
+            .tip-text {
+              position: absolute;
+              padding-bottom: 20px;
+              padding-right: 10px;
+              min-height: 100px;
+              font-size: 1.1rem;
+            }
+
+            span {
+              width: 50px;
+              height: 50px;
+            }
+            #diagnose-img {
+              position: absolute;
+              top: 200px;
+              left: 30%;
+            }
+            #engine-img {
+              position: absolute;
+              top: 170px;
+              left: 12%;
+            }
+            #oil-img {
+              position: absolute;
+
+              top: 140px;
+              left: 18%;
+            }
+            #tire-img {
+              position: absolute;
+
+              top: 200px;
+              right: 25%;
+            }
+            #gear-img {
+              position: absolute;
+
+              bottom: 110px;
+              left: 40%;
+            }
+            #battery-img {
+              position: absolute;
+
+              top: 140px;
+              left: 25%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@mixin quicktips--xlg() {
+  main {
+    #quickTips {
+      .container {
+        .row {
+         
+          .tips-controller {
+          
+            button {
+              height: 150px;
+              font-size: 2rem;
+            }
+          }
+          .img-box {
+            .tip-text {
+              width: 400px;
+              min-height: 100px;
+              font-size: 0.9rem;
+            }
+            span {
+              width: 50px;
+              height: 50px;
+            }
+            #diagnose-img {
+              top: 190px;
+              left: 32%;
+            }
+            #engine-img {
+              top: 180px;
+              left: 17%;
+            }
+            #oil-img {
+              top: 150px;
+              left: 22%;
+            }
+            #tire-img {
+              bottom: 150px;
+              right: 30%;
+            }
+            #gear-img {
+              bottom: 110px;
+              left: 40%;
+            }
+            #battery-img {
+              top: 140px;
+              left: 28%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@mixin quicktips--xxlg(){
+  main {
+    #quickTips {
+      .container {
+        .row {
+         
+          .tips-controller {
+          
+            button {
+              height: 150px;
+              font-size: 1.4rem;
+            }
+          }
+          .img-box {
+            .tip-text {
+              width: 400px;
+              min-height: 100px;
+              font-size: 0.9rem;
+            }
+            span {
+              width: 50px;
+              height: 50px;
+            }
+            #diagnose-img {
+              top: 190px;
+              left: 32%;
+            }
+            #engine-img {
+              top: 180px;
+              left: 17%;
+            }
+            #oil-img {
+              top: 150px;
+              left: 22%;
+            }
+            #tire-img {
+              bottom: 150px;
+              right: 30%;
+            }
+            #gear-img {
+              bottom: 110px;
+              left: 40%;
+            }
+            #battery-img {
+              top: 140px;
+              left: 28%;
+            }
+          }
+        }
+      }
+    }
+  }
 }

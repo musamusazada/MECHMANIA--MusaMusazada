@@ -35,7 +35,7 @@ function cardCreator(obj,cardBox){
     companyName.textContent=`Company Name: ${obj._company}`;
     //Contact Number
     const contactNum = document.createElement("h1");
-    contactNum.textContent=`Contact Number: ${obj._contact}`;
+    contactNum.textContent=`Contact: ${obj._contact}`;
     //Card Heart
     const heart = document.createElement("i");
     heart.setAttribute("id",`${+obj._userID+1}`)
